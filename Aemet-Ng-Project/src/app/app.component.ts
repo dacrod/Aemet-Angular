@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AemetService } from './aemet/services/aemet.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Aemet-Ng-Project';
+
+  constructor ( public aemetService: AemetService ) { }
+
+  callApi () {
+    this.aemetService.obtainAemetData();
+  }
+
 }
