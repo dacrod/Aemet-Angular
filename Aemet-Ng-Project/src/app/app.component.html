@@ -1,1 +1,14 @@
-<button (click)="callApi()">Console Loguear</button>
+<p-splitter [style]="{ height: '300px' }" styleClass="mb-5">
+  <ng-template pTemplate>
+      <div class="col flex align-items-center justify-content-center">
+        <button class="btn btn-primary" (click)="callApiAemet()">Aemet</button>
+      </div>
+  </ng-template>
+  <ng-template pTemplate>
+      <div class="col flex align-items-center justify-content-center">
+        <button class="btn btn-primary" (click)="callApiRedOs()">RedOs</button>
+      </div>
+  </ng-template>
+</p-splitter>
+
+

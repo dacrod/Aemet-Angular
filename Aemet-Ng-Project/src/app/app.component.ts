@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AemetService } from './aemet/services/aemet.service';
+import { MenuItem } from 'primeng/api';
+import { RedOsService } from './red-os/services/red-os.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +10,17 @@ import { AemetService } from './aemet/services/aemet.service';
 })
 export class AppComponent {
 
-  constructor ( public aemetService: AemetService ) { }
+  constructor (
+    public aemetService: AemetService,
+    public redOsService: RedOsService
+  ) { }
 
-  callApi () {
+  callApiAemet () {
     this.aemetService.obtainAemetData();
+  }
+
+  callApiRedOs () {
+    this.redOsService.obtainRedOsData();
   }
 
 }
