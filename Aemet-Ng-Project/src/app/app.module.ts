@@ -7,6 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { SplitterModule } from 'primeng/splitter';
+import { SharedModule } from './shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { SplitterModule } from 'primeng/splitter';
     AppRoutingModule,
     HttpClientModule,
     PanelMenuModule,
-    SplitterModule
+    SplitterModule,
+    SharedModule,
+    BrowserAnimationsModule
   ],
   providers: [
     provideClientHydration()
