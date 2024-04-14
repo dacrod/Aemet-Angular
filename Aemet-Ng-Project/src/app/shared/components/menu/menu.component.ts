@@ -9,6 +9,8 @@ export class MenuComponent implements OnInit{
 
   menuItems: MenuItem[] = [];
 
+  activeItem: MenuItem | undefined;
+
   ngOnInit(): void {
     this.menuItems = [
       {
@@ -19,8 +21,21 @@ export class MenuComponent implements OnInit{
       {
         label: 'Configuration',
         icon: 'pi pi-cog',
-        routerLink: 'config'
+        routerLink: 'config',
+        items: [
+          {
+            label: 'Login'
+          },
+          {
+            label: 'Register'
+          }
+        ]
       }
-    ]
+    ];
+    this.activeItem = this.menuItems[0];
   };
+
+  onActiveItemChange(event: MenuItem) {
+    this.activeItem = event;
+  }
 }

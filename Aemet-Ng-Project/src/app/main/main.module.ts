@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { ConfigPageComponent } from './pages/config-page/config-page.component';
 import { MainRoutingModule } from './main-routing.module';
-import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 
 
 
@@ -14,8 +13,7 @@ import { PrimeNgModule } from '../prime-ng/prime-ng.module';
   ],
   imports: [
     CommonModule,
-    MainRoutingModule,
-    PrimeNgModule
+    MainRoutingModule
   ]
 })
 export class MainModule { }
