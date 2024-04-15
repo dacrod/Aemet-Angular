@@ -9,6 +9,8 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 import { SplitterModule } from 'primeng/splitter';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AemetModule } from './aemet/aemet.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PanelMenuModule,
     SplitterModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AemetModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

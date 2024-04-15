@@ -4,6 +4,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { MenubarModule } from 'primeng/menubar';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
+import { CalendarModule } from 'primeng/calendar';
 
 
 @NgModule({
@@ -13,13 +14,15 @@ import { TableModule } from 'primeng/table';
     TabMenuModule,
     MenubarModule,
     PanelModule,
-    TableModule
+    TableModule,
+    CalendarModule
   ],
   exports: [
     TabMenuModule,
     MenubarModule,
     PanelModule,
-    TableModule
+    TableModule,
+    CalendarModule
   ]
 })
 export class PrimeNgModule { }

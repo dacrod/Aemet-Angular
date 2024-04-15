@@ -1,18 +1,26 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Weather } from '../models/weather.model';
+import { unsubscribe } from 'diagnostics_channel';
 
 @Injectable({providedIn: 'root'})
 export class AemetService {
 
   constructor (private http: HttpClient) { }
 
-  public url: string = "https://api.openweathermap.org/data/2.5/weather?lat=41.65518&lon=-4.72372&appid=6d310f19881e08b5af0dcc284118f32c";
+  public urlStart: string = "https://api.weatherapi.com/v1/history.json?q=41.65518%2C%20-4.72372&dt=";
+  public urlEnd: string = "&lang=es&key=a95366f447d743938d8150729241504%20";
+  arrayTemps: number[] = [];
+  arrayHoras: string[] = [];
 
-  obtainAemetData () {
-    return this.http.get( this.url )
-            .subscribe( res => {
-              console.log(res);
-            } )
+  obtainAemetData ( fecha?: string ): number[]  {
+    this.http.get<Weather>( this.urlStart + fecha + this.urlEnd )
+      .subscribe( res => {
+        for (let i = 0; i < res.forecast.forecastday[0].hour.length; i++) {
+          this.arrayTemps.push(res.forecast.forecastday[0].hour[i].temp_c);
+        }
+      } );
+      return this.arrayTemps;
   }
 }
 

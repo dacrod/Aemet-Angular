@@ -1,1 +1,8 @@
-
+<p-calendar
+  (ngModelChange)="onDateChange()"
+  [(ngModel)]="date"
+  [showIcon]="true"
+  dateFormat="yy-mm-dd"
+  placeholder="Select date" >
+</p-calendar>
+<p-chart type="line" [data]="data" [options]="options"></p-chart>
