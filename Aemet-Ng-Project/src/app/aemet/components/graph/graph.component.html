@@ -1,8 +1,10 @@
 <p-calendar
-  (ngModelChange)="onDateChange()"
+  [maxDate]="maxDate"
+  (ngModelChange)="onDateChange($event)"
   [(ngModel)]="date"
+  [defaultDate]="date"
   [showIcon]="true"
-  dateFormat="yy-mm-dd"
-  placeholder="Select date" >
+  dateFormat="yy-m-d"
+  placeholder="Select date">
 </p-calendar>
 <p-chart type="line" [data]="data" [options]="options"></p-chart>

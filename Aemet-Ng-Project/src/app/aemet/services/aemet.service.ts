@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Weather } from '../models/weather.model';
-import { unsubscribe } from 'diagnostics_channel';
+import { Observable, map } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class AemetService {
@@ -13,15 +13,28 @@ export class AemetService {
   arrayTemps: number[] = [];
   arrayHoras: string[] = [];
 
-  obtainAemetData ( fecha?: string ): number[]  {
-    this.http.get<Weather>( this.urlStart + fecha + this.urlEnd )
-      .subscribe( res => {
-        for (let i = 0; i < res.forecast.forecastday[0].hour.length; i++) {
-          this.arrayTemps.push(res.forecast.forecastday[0].hour[i].temp_c);
-        }
-      } );
-      return this.arrayTemps;
+  obtainAemetData ( year: string, month: string, day: string ): Observable<number[]>  {
+    if(+month < 10 && +day < 10) {
+      month = `0${month}`;
+      day = `0${day}`;
+    } else if ( +month < 10 ) {
+      month = `0${month}`;
+    } else if ( +day < 10 ) {
+      day = `0${day}`;
+    }
+
+    return this.http.get<Weather>( this.urlStart + `${year}-${month}-${day}` + this.urlEnd )
+      .pipe(
+        map( res => {
+          console.log(year);
+          console.log(month);
+          console.log(day);
+          this.arrayTemps = [];
+          for (let i = 0; i < res.forecast.forecastday[0].hour.length; i++) {
+            this.arrayTemps.push(res.forecast.forecastday[0].hour[i].temp_c);
+          }
+          return this.arrayTemps;
+        })
+      )
   }
 }
-
-//https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/168/?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYW5pZWxjdWFyZW50YWxlc29AZ21haWwuY29tIiwianRpIjoiMDE2N2YzODctMGY3My00Y2ZhLWI4NWEtNjRjNTY3MmE1NjBjIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE3MDQ3OTgwMTcsInVzZXJJZCI6IjAxNjdmMzg3LTBmNzMtNGNmYS1iODVhLTY0YzU2NzJhNTYwYyIsInJvbGUiOiIifQ.7iXh8fQr2Oyc8RDW3kYeTPG7ecHHcVLOMZ-cmIW3jGw

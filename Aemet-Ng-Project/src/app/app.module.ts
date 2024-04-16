@@ -11,7 +11,9 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AemetModule } from './aemet/aemet.module';
 import { FormsModule } from '@angular/forms';
-
+import { RedOsModule } from './red-os/red-os.module';
+import { PanelModule } from 'primeng/panel';
+import { MixedModule } from './mixed/mixed.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,10 @@ import { FormsModule } from '@angular/forms';
     SharedModule,
     BrowserAnimationsModule,
     AemetModule,
-    FormsModule
+    FormsModule,
+    RedOsModule,
+    PanelModule,
+    MixedModule
   ],
   providers: [
     provideClientHydration()

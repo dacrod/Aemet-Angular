@@ -9,12 +9,5 @@ import { MenuItem } from 'primeng/api';
 })
 export class AppComponent {
 
-  constructor (
-    public aemetService: AemetService,
-  ) { }
-
-  callApiAemet () {
-    this.aemetService.obtainAemetData();
-  }
 
 }
