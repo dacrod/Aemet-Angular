@@ -43,7 +43,6 @@ export class GraphComponent {
     this.redosService.obtainRedosData()
       .subscribe( res => {
         this.arrayHoras = res;
-        console.log(this.arrayHoras);
       } )
 
     this.aemetService.obtainAemetData( this.year, this.month, this.day  )
@@ -63,9 +62,6 @@ export class GraphComponent {
           ]
         };
       })
-
-    //this.arrayTemps = this.aemetService.obtainAemetData( this.year, this.month, this.day  );
-
   }
 
   onDateChange(event: Date) {
