@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ChartModule } from 'primeng/chart';
 import { CalendarModule } from 'primeng/calendar';
 import { GraphComponent } from './components/graph/graph.component';
-
+import { DialogModule } from 'primeng/dialog';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { GraphComponent } from './components/graph/graph.component';
     PrimeNgModule,
     FormsModule,
     ChartModule,
-    CalendarModule
+    CalendarModule,
+    DialogModule
   ],
   exports: [
     GraphComponent

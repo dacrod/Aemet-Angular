@@ -10,6 +10,7 @@ export class GraphComponent implements OnInit {
   constructor ( private redOsService: RedosService ) {}
   arrayHoras  : number[] = [];
   data: any;
+  actualPrice!: number;
 
   options = {
     maintainAspectRatio: false,
@@ -17,6 +18,11 @@ export class GraphComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.redOsService.obtainActualPrice()
+      .subscribe( res => {
+        this.actualPrice = res;
+      } )
+
     this.redOsService.obtainRedosData()
       .subscribe( res => {
         this.arrayHoras = res;

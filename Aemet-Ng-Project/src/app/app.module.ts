@@ -14,6 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { RedOsModule } from './red-os/red-os.module';
 import { PanelModule } from 'primeng/panel';
 import { MixedModule } from './mixed/mixed.module';
+import { TabViewModule } from 'primeng/tabview';
+import { PrimeNgModule } from './prime-ng/prime-ng.module';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { MixedModule } from './mixed/mixed.module';
     FormsModule,
     RedOsModule,
     PanelModule,
-    MixedModule
+    MixedModule,
+    TabViewModule,
+    PrimeNgModule,
   ],
   providers: [
     provideClientHydration()

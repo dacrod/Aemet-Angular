@@ -1,15 +1,17 @@
-<p-panel header="Panel de Gráficas">
+<p-panel class="h-full" header="Panel de Gráficas">
   <div class="grid">
       <div class="col">
-          <p-panel header="Temperaturas/hora">
-              <aemet-graph></aemet-graph>
-          </p-panel>
-          <p-panel header="Precio MWh (hoy)">
+        <p-tabView>
+          <p-tabPanel header="Temperaturas">
+            <aemet-graph></aemet-graph>
+          </p-tabPanel>
+          <p-tabPanel header="MWh">
             <redos-graph></redos-graph>
-          </p-panel>
+          </p-tabPanel>
+        </p-tabView>
       </div>
       <div class="col">
-          <p-panel header="Precio MWh (hoy)">
+          <p-panel header="Resumen de datos">
               <mixed-table></mixed-table>
           </p-panel>
       </div>

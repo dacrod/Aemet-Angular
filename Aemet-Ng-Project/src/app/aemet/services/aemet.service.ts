@@ -26,9 +26,6 @@ export class AemetService {
     return this.http.get<Weather>( this.urlStart + `${year}-${month}-${day}` + this.urlEnd )
       .pipe(
         map( res => {
-          console.log(year);
-          console.log(month);
-          console.log(day);
           this.arrayTemps = [];
           for (let i = 0; i < res.forecast.forecastday[0].hour.length; i++) {
             this.arrayTemps.push(res.forecast.forecastday[0].hour[i].temp_c);
