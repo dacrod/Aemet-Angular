@@ -6,6 +6,7 @@ import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { CalendarModule } from 'primeng/calendar';
 import { RippleModule } from 'primeng/ripple';
+import { SidebarModule } from 'primeng/sidebar';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { RippleModule } from 'primeng/ripple';
     PanelModule,
     TableModule,
     CalendarModule,
-    RippleModule
+    RippleModule,
+    SidebarModule
   ]
 })
 export class PrimeNgModule { }

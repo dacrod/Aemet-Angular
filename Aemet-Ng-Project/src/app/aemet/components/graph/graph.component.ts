@@ -10,6 +10,8 @@ import { RedosService } from '../../../red-os/services/red-os.service';
   styles: ``
 })
 export class GraphComponent {
+
+  //* Variables
   date!: Date;
   year: string = '';
   month: string = '';
@@ -17,15 +19,18 @@ export class GraphComponent {
   data: any;
   maxDate: Date = new Date();
 
+  //* Arrays
   arrayTemps  : number[] = [];
   arrayPrices : number[] = [];
-  arrayHoras  : number[] = [];
+  arrayHours  : number[] = [];
 
+  //* Basic graph options
   options = {
     maintainAspectRatio: false,
     aspectRatio: 0.6
   }
 
+  //* Injection of services
   constructor (
     private aemetService: AemetService,
     private redosService: RedosService) {
@@ -42,33 +47,24 @@ export class GraphComponent {
 
     this.redosService.obtainRedosData()
       .subscribe( res => {
-        this.arrayHoras = res;
-      } )
+        this.arrayHours = res;
+      } );
 
-    this.aemetService.obtainAemetData( this.year, this.month, this.day  )
-      .subscribe( res=> {
-        this.arrayTemps = res;
-        this.data = {
-          labels: ['00.00', '01.00', '02.00', '03.00', '04.00', '05.00', '06.00', '07.00', '08.00', '09.00', '10.00', '11.00', '12.00', '13.00', '14.00', '15.00', '16.00', '17.00', '18.00', '19.00', '20.00', '21.00', '22.00', '23.00',],
-          datasets: [
-              {
-                  label: `Temperatura del ${this.year}-${this.month}-${this.day}`,
-                  data: this.arrayTemps,
-                  borderColor: "#FF4000",
-                  fill: false,
-                  tension: 0.4
-              },
+    this.getData();
 
-          ]
-        };
-      })
   }
 
+  //* This is going to be called on calendar's date change
   onDateChange(event: Date) {
     this.year = event.getFullYear().toString();
     this.month = (event.getMonth() + 1).toString();
     this.day = event.getDate().toString();
 
+    this.getData();
+  }
+
+  //* This will receive an array with the temperatures of the selected date and will fill the graph with that data.
+  getData() {
     this.aemetService.obtainAemetData( this.year, this.month, this.day  )
       .subscribe( res=> {
         this.arrayTemps = res;
@@ -85,7 +81,5 @@ export class GraphComponent {
           ]
         };
       })
-
-
   }
 }

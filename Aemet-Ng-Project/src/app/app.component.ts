@@ -10,10 +10,12 @@ import { RedosService } from './red-os/services/red-os.service';
 })
 export class AppComponent implements OnInit{
 
+  sidebarVisible: boolean = false;
+
   constructor (private primengConfig: PrimeNGConfig) {}
 
   ngOnInit(): void {
-    this.primengConfig.ripple = true; 
+    this.primengConfig.ripple = true;
   }
 
 }
