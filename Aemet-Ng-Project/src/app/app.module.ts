@@ -13,9 +13,9 @@ import { AemetModule } from './aemet/aemet.module';
 import { FormsModule } from '@angular/forms';
 import { RedOsModule } from './red-os/red-os.module';
 import { PanelModule } from 'primeng/panel';
-import { MixedModule } from './mixed/mixed.module';
 import { TabViewModule } from 'primeng/tabview';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
+import { MixedModule } from './mixed/mixed.module';
 
 
 @NgModule({
@@ -34,9 +34,9 @@ import { PrimeNgModule } from './prime-ng/prime-ng.module';
     FormsModule,
     RedOsModule,
     PanelModule,
-    MixedModule,
     TabViewModule,
     PrimeNgModule,
+    MixedModule
   ],
   providers: [
     provideClientHydration()

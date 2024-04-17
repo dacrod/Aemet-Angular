@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { TableComponent } from './components/table/table.component';
-
-
+import { PrimeNgModule } from '../prime-ng/prime-ng.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,10 +10,12 @@ import { TableComponent } from './components/table/table.component';
   ],
   imports: [
     CommonModule,
-    PrimeNgModule
+    PrimeNgModule,
+    FormsModule
   ],
   exports: [
     TableComponent
   ]
 })
+
 export class MixedModule { }
