@@ -10,6 +10,7 @@ export class GraphComponent implements OnInit {
   pricePerHour: number[] = [];
   data: any;
   actualPrice!: number;
+  date!: Date;
 
   constructor ( private redOsService: RedosService ) {}
 
@@ -19,7 +20,7 @@ export class GraphComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.date = new Date();
     this.redOsService.obtainActualPrice()
       .subscribe( price => {
         this.actualPrice = price;
@@ -32,7 +33,7 @@ export class GraphComponent implements OnInit {
           labels: ['00.00', '01.00', '02.00', '03.00', '04.00', '05.00', '06.00', '07.00', '08.00', '09.00', '10.00', '11.00', '12.00', '13.00', '14.00', '15.00', '16.00', '17.00', '18.00', '19.00', '20.00', '21.00', '22.00', '23.00',],
           datasets: [
             {
-              label: `Precio del día actual`,
+              label: `Precios MWh (${this.date.getFullYear()}-${this.date.getUTCMonth()}-${this.date.getDate() + 1})`,
               data: this.pricePerHour,
               borderColor: "#58FF33",
               fill: false,

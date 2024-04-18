@@ -4,6 +4,7 @@ import { TableComponent } from './components/table/table.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     TableComponent
