@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuComponent } from './components/menu/menu.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
-
+import { LinearGraphComponent } from './components/linear-graph/linear-graph.component';
+import { ChartModule } from 'primeng/chart';
 
 
 @NgModule({
   declarations: [
-    MenuComponent
+    LinearGraphComponent
   ],
   imports: [
     CommonModule,
-    PrimeNgModule
+    PrimeNgModule,
+    ChartModule
   ],
   exports: [
-    MenuComponent
+    LinearGraphComponent
   ]
 })
 export class SharedModule { }
