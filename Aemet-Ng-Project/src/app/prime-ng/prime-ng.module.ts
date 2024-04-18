@@ -7,6 +7,9 @@ import { TableModule } from 'primeng/table';
 import { CalendarModule } from 'primeng/calendar';
 import { RippleModule } from 'primeng/ripple';
 import { SidebarModule } from 'primeng/sidebar';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { MessagesModule } from 'primeng/messages';
+
 
 
 @NgModule({
@@ -18,7 +21,9 @@ import { SidebarModule } from 'primeng/sidebar';
     PanelModule,
     TableModule,
     CalendarModule,
-    RippleModule
+    RippleModule,
+    InputSwitchModule,
+    MessagesModule
   ],
   exports: [
     TabMenuModule,
@@ -27,7 +32,9 @@ import { SidebarModule } from 'primeng/sidebar';
     TableModule,
     CalendarModule,
     RippleModule,
-    SidebarModule
+    SidebarModule,
+    InputSwitchModule,
+    MessagesModule
   ]
 })
 export class PrimeNgModule { }

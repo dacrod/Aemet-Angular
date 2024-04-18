@@ -1,21 +1,23 @@
-<p-panel class="h-full" header="Panel de Gráficas">
-  <div class="grid">
-    <div class="col">
-      <p-panel header="Gráficas">
-        <p-tabView>
-          <p-tabPanel header="Temperaturas">
-            <aemet-graph></aemet-graph>
-          </p-tabPanel>
-          <p-tabPanel header="MWh">
-            <redos-graph></redos-graph>
-          </p-tabPanel>
-        </p-tabView>
-      </p-panel>
+<div>
+  <p-panel header="Panel de Gráficas">
+    <div class="grid">
+      <div class="col">
+        <p-panel header="Gráficas">
+          <p-tabView>
+            <p-tabPanel header="Temperaturas">
+              <aemet-graph></aemet-graph>
+            </p-tabPanel>
+            <p-tabPanel header="MWh">
+              <redos-graph></redos-graph>
+            </p-tabPanel>
+          </p-tabView>
+        </p-panel>
+      </div>
+      <div class="col">
+        <p-panel header="Resumen de datos">
+          <mixed-table></mixed-table>
+        </p-panel>
+      </div>
     </div>
-    <div class="col">
-      <p-panel header="Resumen de datos">
-        <mixed-table></mixed-table>
-      </p-panel>
-    </div>
-  </div>
-</p-panel>
+  </p-panel>
+</div>
