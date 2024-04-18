@@ -2,30 +2,35 @@
   [maxDate]="maxDate"
   (ngModelChange)="onDateChange($event)"
   [(ngModel)]="date"
-  [defaultDate]="date"
+  [defaultDate]="maxDate"
   [showIcon]="true"
   dateFormat="yy-m-d"
   placeholder="Select date">
 </p-calendar>
+<div class="mt-4 flex">
+  <label [ngStyle]="{'color' : date < maxDate ? 'grey' : 'white'}" for="switch1" class="justify-content-center mr-3">Mostrar Precio</label>
+  <p-inputSwitch [disabled]="date < maxDate" inputId="switch1" (onChange)="onSwitchChange()" [(ngModel)]="checked"></p-inputSwitch>
+</div>
 <p-table
+  styleClass="p-datatable-gridlines p-datatable-striped"
   [value]="registros"
   [paginator]="true"
   [rows]="7"
   [showCurrentPageReport]="true"
-  [tableStyle]="{ 'min-width': '50rem' }"
+  [tableStyle]="{ 'min-width': '50rem', 'margin-top': '15px' }"
   [rowsPerPageOptions]="[7, 24]">
   <ng-template pTemplate="header">
       <tr>
           <th pSortableColumn="hora">Hora<p-sortIcon field="hora"></p-sortIcon></th>
           <th pSortableColumn="temperatura">Temperatura<p-sortIcon field="temperatura"></p-sortIcon></th>
-          <th>Precio MWh</th>
+          <th *ngIf="checked">Precio MWh</th>
       </tr>
   </ng-template>
   <ng-template pTemplate="body" let-item>
       <tr>
           <td>{{ item.hora }}</td>
           <td>{{ item.temperatura }}</td>
-          <td>{{ item.precioMWH }}</td>
+          <td *ngIf="checked">{{ item.precioMWH }}</td>
       </tr>
   </ng-template>
 </p-table>
