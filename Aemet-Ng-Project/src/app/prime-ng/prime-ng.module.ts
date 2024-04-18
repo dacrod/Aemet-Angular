@@ -10,6 +10,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { MessagesModule } from 'primeng/messages';
 import { CheckboxModule } from 'primeng/checkbox';
+import { TagModule } from 'primeng/tag';
 
 
 
@@ -25,7 +26,8 @@ import { CheckboxModule } from 'primeng/checkbox';
     RippleModule,
     InputSwitchModule,
     MessagesModule,
-    CheckboxModule
+    CheckboxModule,
+    TagModule
   ],
   exports: [
     TabMenuModule,
@@ -37,7 +39,8 @@ import { CheckboxModule } from 'primeng/checkbox';
     SidebarModule,
     InputSwitchModule,
     MessagesModule,
-    CheckboxModule
+    CheckboxModule,
+    TagModule
   ]
 })
 export class PrimeNgModule { }
