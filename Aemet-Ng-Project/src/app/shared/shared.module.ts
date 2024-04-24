@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
-import { LinearGraphComponent } from './components/linear-graph/linear-graph.component';
 import { ChartModule } from 'primeng/chart';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
 
 
 @NgModule({
   declarations: [
-    LinearGraphComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -15,7 +17,7 @@ import { ChartModule } from 'primeng/chart';
     ChartModule
   ],
   exports: [
-    LinearGraphComponent
+    
   ]
 })
 export class SharedModule { }
