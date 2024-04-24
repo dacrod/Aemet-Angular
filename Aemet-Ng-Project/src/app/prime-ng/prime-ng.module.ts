@@ -11,8 +11,8 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { MessagesModule } from 'primeng/messages';
 import { CheckboxModule } from 'primeng/checkbox';
 import { TagModule } from 'primeng/tag';
-
-
+import { ChartModule } from 'primeng/chart';
+import { TabViewModule } from 'primeng/tabview';
 
 @NgModule({
   declarations: [],
@@ -27,7 +27,9 @@ import { TagModule } from 'primeng/tag';
     InputSwitchModule,
     MessagesModule,
     CheckboxModule,
-    TagModule
+    TagModule,
+    ChartModule,
+    TabViewModule
   ],
   exports: [
     TabMenuModule,
@@ -40,7 +42,9 @@ import { TagModule } from 'primeng/tag';
     InputSwitchModule,
     MessagesModule,
     CheckboxModule,
-    TagModule
+    TagModule,
+    ChartModule,
+    TabViewModule
   ]
 })
 export class PrimeNgModule { }
