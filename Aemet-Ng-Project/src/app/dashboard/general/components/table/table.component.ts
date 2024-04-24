@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { PriceService } from '../../../prices/services/prices.service';
 import { AemetService } from '../../../../aemet/services/aemet.service';
-import { Registro } from '../../models/registro.model';
+
 import { Message } from 'primeng/api';
+import { PriceService } from '../../../prices/services/prices.service';
+import { Registro } from '../../models/registro.model';
 
 @Component({
   selector: 'dashboard-general-table',
