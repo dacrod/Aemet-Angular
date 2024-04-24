@@ -1,7 +1,7 @@
 <div style="height: 100vh;">
   <p-panel header="Panel General" class="h-full">
-    <div class="grid">
-      <div class="col p-2 h-full">
+    <div class="grid" style="min-height:90vh;">
+      <div class="md:col-12 lg:col-6 p-2 h-full">
         <p-panel header="Gráficas">
           <p-tabView>
             <p-tabPanel header="Temperaturas">
@@ -13,7 +13,7 @@
           </p-tabView>
         </p-panel>
       </div>
-      <div class="col p-2 h-full">
+      <div class="md:col-12 lg:col-6 p-2 h-full">
         <p-panel header="Resumen de datos">
           <dashboard-general-table></dashboard-general-table>
         </p-panel>
