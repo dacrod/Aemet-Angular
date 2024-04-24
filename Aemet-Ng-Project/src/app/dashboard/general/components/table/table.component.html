@@ -30,7 +30,7 @@
       <tr>
           <td>{{ item.hora }}</td>
           <td>{{ item.temperatura }}</td>
-          <td *ngIf="checked"> <p-tag [severity]="item.precioMWH < 70 ? 'success' : 'danger'" value="{{ item.precioMWH }}€"></p-tag></td>
+          <td *ngIf="checked"> <p-tag [severity]="priceRange(item.precioMWH)" value="{{ item.precioMWH }}€"></p-tag></td>
       </tr>
   </ng-template>
 </p-table>

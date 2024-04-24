@@ -16,6 +16,8 @@ import { PanelModule } from 'primeng/panel';
 import { TabViewModule } from 'primeng/tabview';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
 import { MixedModule } from './mixed/mixed.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { MixedModule } from './mixed/mixed.module';
     PanelModule,
     TabViewModule,
     PrimeNgModule,
-    MixedModule
+    MixedModule,
+    DashboardModule
   ],
   providers: [
     provideClientHydration()
