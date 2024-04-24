@@ -17,7 +17,8 @@ import { FooterComponent } from './components/layout/footer/footer.component';
     ChartModule
   ],
   exports: [
-    
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }
