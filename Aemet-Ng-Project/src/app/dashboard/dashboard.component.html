@@ -1,7 +1,7 @@
-<div style="height: 100vh;">
-  <p-panel header="Panel General" class="h-full">
-    <div class="grid" style="min-height:90vh;">
-      <div class="md:col-12 lg:col-6 p-2 h-full">
+<div style="max-height: 100vh; margin: 0; padding: 0;">
+  <p-panel header="Dashboard" class="h-full">
+    <div class="grid" style="max-height: 100vh; flex-wrap: nowrap;">
+      <div class="md:col-12 lg:col-6 p-2">
         <p-panel header="Gráficas">
           <p-tabView>
             <p-tabPanel header="Temperaturas">
@@ -19,5 +19,17 @@
         </p-panel>
       </div>
     </div>
+    <ng-template pTemplate="footer">
+      <div class="flex flex-wrap align-items-center justify-content-between gap-3 col-12">
+          <div class="flex align-items-center gap-2">
+            <span class="p-text-secondary">Developed by</span>
+            <p-chip class="align-bottom p-0" label="Daniel Cuarental" image="https://avatars.githubusercontent.com/u/165478075?v=4" alt="Avatar image"></p-chip>
+          </div>
+          <div class="flex gap-2">
+          <p-button onclick="location.href='https://github.com/dacrod'" icon="pi pi-github" [outlined]="true" [raised]="true" [rounded]="true"></p-button>
+          <p-button icon="pi pi-linkedin" severity="info" [outlined]="true" [raised]="true" [rounded]="true"></p-button>
+          </div>
+      </div>
+    </ng-template>
   </p-panel>
 </div>

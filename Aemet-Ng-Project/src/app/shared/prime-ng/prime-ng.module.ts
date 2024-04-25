@@ -13,10 +13,17 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { TagModule } from 'primeng/tag';
 import { ChartModule } from 'primeng/chart';
 import { TabViewModule } from 'primeng/tabview';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { SplitterModule } from 'primeng/splitter';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { ChipModule } from 'primeng/chip';
+
 
 @NgModule({
   declarations: [],
   imports: [
+    ChipModule,
     CommonModule,
     TabMenuModule,
     MenubarModule,
@@ -29,9 +36,15 @@ import { TabViewModule } from 'primeng/tabview';
     CheckboxModule,
     TagModule,
     ChartModule,
-    TabViewModule
+    TabViewModule,
+    PanelMenuModule,
+    SplitterModule,
+    AvatarModule,
+    AvatarGroupModule
   ],
   exports: [
+    AvatarGroupModule,
+    AvatarModule,
     TabMenuModule,
     MenubarModule,
     PanelModule,
@@ -44,7 +57,10 @@ import { TabViewModule } from 'primeng/tabview';
     CheckboxModule,
     TagModule,
     ChartModule,
-    TabViewModule
+    TabViewModule,
+    PanelMenuModule,
+    SplitterModule,
+    ChipModule
   ]
 })
 export class PrimeNgModule { }

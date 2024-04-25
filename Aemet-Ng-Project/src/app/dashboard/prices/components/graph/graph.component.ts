@@ -11,12 +11,12 @@ export class GraphComponent {
   actualPrice!: number;
   date!: Date;
 
-  constructor ( private redOsService: PriceService ) {}
-
   options = {
-    maintainAspectRatio: false,
-    aspectRatio: 0.6
+    maintainAspectRatio: true,
+    aspectRatio: 1.8
   }
+
+  constructor ( private redOsService: PriceService ) {}
 
   ngOnInit(): void {
     this.date = new Date();
@@ -37,10 +37,9 @@ export class GraphComponent {
               borderColor: "#58FF33",
               fill: false,
               tension: 0.4
-            },
-    
-            ]
-          };
-      } );
+            }
+          ]
+        };
+      });
   }
 }

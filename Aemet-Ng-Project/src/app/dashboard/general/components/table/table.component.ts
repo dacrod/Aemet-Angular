@@ -1,34 +1,30 @@
 import { Component } from '@angular/core';
-import { AemetService } from '../../../../aemet/services/aemet.service';
-
-import { Message } from 'primeng/api';
 import { PriceService } from '../../../prices/services/prices.service';
 import { Registro } from '../../models/registro.model';
+import { TemperaturesService } from '../../../temperatures/services/temperatures.service';
+import { hours } from '../../../../shared/constants/constants';
 
 @Component({
   selector: 'dashboard-general-table',
-  templateUrl: './table.component.html'
+  templateUrl: './table.component.html',
+  styleUrl: './table.component.css'
 })
 export class TableComponent {
   date!: Date;
+  maxDate!: Date;
   year: string = '';
   month: string = '';
   day: string = '';
   first: number = 0;
   rows: number = 7;
   checked: boolean = false;
-  messages1!: Message[];
-  // actualDate!: Date;
 
   arrayTemps: number[] = [];
   pricesPerHour: number[] = [];
-  arrayHoras: string[] = ['00.00', '01.00', '02.00', '03.00', '04.00', '05.00', '06.00', '07.00', '08.00', '09.00', '10.00', '11.00', '12.00', '13.00', '14.00', '15.00', '16.00', '17.00', '18.00', '19.00', '20.00', '21.00', '22.00', '23.00'];
   registros: Registro[] = [];
 
-  maxDate!: Date;;
-
   constructor(
-    private aemetService: AemetService,
+    private temperaturesService: TemperaturesService,
     private redosService: PriceService
   ) {
   }
@@ -36,15 +32,13 @@ export class TableComponent {
   ngOnInit(): void {
     this.maxDate = new Date();
     this.maxDate.setHours(0,0,0,0);
-    // this.actualDate = new Date();
-    // this.actualDate.setDate(this.date.getDate() - 1);
     this.date = new Date();
 
     this.year = this.date.getFullYear().toString();
     this.month = (this.date.getMonth() + 1).toString();
     this.day = (this.date.getDate()).toString();
 
-    this.aemetService.obtainAemetData(this.year, this.month, this.day)
+    this.temperaturesService.obtainAemetData(this.year, this.month, this.day)
       .subscribe(res => {
         this.redosService.obtainRedosData()
           .subscribe( prices => {
@@ -55,13 +49,13 @@ export class TableComponent {
               this.registros.push(
                 {
                   dia: "Dia prueba",
-                  hora: `${this.arrayHoras[i]}`,
-                  temperatura: `${this.arrayTemps[i]} º`,
+                  hora: `${hours[i]}`,
+                  temperatura: this.arrayTemps[i],
                   precioMWH: `${this.pricesPerHour[i]}`
                 }
               )
             }
-          } )
+          })
       })
   }
 
@@ -80,7 +74,7 @@ export class TableComponent {
       this.checked = false;
     }
 
-    this.aemetService.obtainAemetData(this.year, this.month, this.day)
+    this.temperaturesService.obtainAemetData(this.year, this.month, this.day)
       .subscribe(res => {
         this.registros = [];
         this.redosService.obtainRedosData()
@@ -93,8 +87,8 @@ export class TableComponent {
           this.registros.push(
             {
               dia: "Dia prueba",
-              hora: `${this.arrayHoras[i]}`,
-              temperatura: `${this.arrayTemps[i]} º`,
+              hora: `${hours[i]}`,
+              temperatura: this.arrayTemps[i],
               precioMWH: `${this.pricesPerHour[i]}`
             }
           )
