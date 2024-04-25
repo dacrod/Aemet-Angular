@@ -5,13 +5,11 @@ import { Weather } from '../models/weather.model';
 
 @Injectable({providedIn: 'root'})
 export class TemperaturesService {
-    
-    constructor (private http: HttpClient) { }
+  constructor (private http: HttpClient) { }
 
-  public urlStart: string = "https://api.weatherapi.com/v1/history.json?q=41.65518%2C%20-4.72372&dt=";
-  public urlEnd: string = "&lang=es&key=a95366f447d743938d8150729241504%20";
+  urlStart: string = "https://api.weatherapi.com/v1/history.json?q=41.65518%2C%20-4.72372&dt=";
+  urlEnd: string = "&lang=es&key=a95366f447d743938d8150729241504%20";
   arrayTemps: number[] = [];
-  arrayHoras: string[] = [];
 
   obtainAemetData ( year: string, month: string, day: string ): Observable<number[]>  {
     if(+month < 10 && +day < 10) {
@@ -34,5 +32,4 @@ export class TemperaturesService {
         })
       )
   }
-    
 }

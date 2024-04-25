@@ -1,23 +1,35 @@
-<div style="height: 100vh; margin: 0; padding: 0;">
-    <p-panel  header="Panel General">
-      <div class="grid">
-        <div class="col">
-          <p-panel header="Gráficas">
-            <p-tabView>
-              <p-tabPanel header="Temperaturas">
-                <dashboard-temperatures-graph></dashboard-temperatures-graph>
-              </p-tabPanel>
-              <p-tabPanel header="MWh">
-                <dashboard-prices-graph></dashboard-prices-graph>
-              </p-tabPanel>
-            </p-tabView>
-          </p-panel>
-        </div>
-        <div class="col">
-          <p-panel header="Resumen de datos">
-            <dashboard-general-table></dashboard-general-table>
-          </p-panel>
-        </div>
+<div style="max-height: 100vh; margin: 0; padding: 0;">
+  <p-panel header="Dashboard" class="m-0 p-0">
+    <div class="grid" style="max-height: 100vh;">
+      <div class="md:col-12 lg:col-6 p-2">
+        <p-panel header="Gráficas">
+          <p-tabView>
+            <p-tabPanel header="Temperaturas">
+              <dashboard-temperatures-graph></dashboard-temperatures-graph>
+            </p-tabPanel>
+            <p-tabPanel header="MWh">
+              <dashboard-prices-graph></dashboard-prices-graph>
+            </p-tabPanel>
+          </p-tabView>
+        </p-panel>
       </div>
-    </p-panel>
-  </div>
+      <div class="md:col-12 lg:col-6 p-2 h-full">
+        <p-panel header="Resumen de datos">
+          <dashboard-general-table></dashboard-general-table>
+        </p-panel>
+      </div>
+    </div>
+    <ng-template  pTemplate="footer">
+      <div class="p-2 flex flex-wrap align-items-center justify-content-between gap-3 col-12">
+          <div class="flex align-items-center gap-2">
+            <span class="p-text-secondary">Developed by</span>
+            <p-chip class="align-bottom" label="Daniel Cuarental" image="https://avatars.githubusercontent.com/u/165478075?v=4" alt="Avatar image"></p-chip>
+          </div>
+          <div class="flex gap-2">
+          <p-button onclick="location.href='https://github.com/dacrod'" icon="pi pi-github" [outlined]="true" [raised]="true" [rounded]="true"></p-button>
+          <p-button icon="pi pi-linkedin" severity="info" [outlined]="true" [raised]="true" [rounded]="true"></p-button>
+          </div>
+      </div>
+    </ng-template>
+  </p-panel>
+</div>

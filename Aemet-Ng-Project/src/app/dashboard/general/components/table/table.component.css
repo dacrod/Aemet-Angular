@@ -1,0 +1,11 @@
+.highTemp {
+    color: red;
+}
+
+.midTemp {
+    color: orange;
+}
+
+.lowTemp {
+    color: lightskyblue;
+}

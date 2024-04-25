@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableComponent } from './components/table/table.component';
-import { PrimeNgModule } from '../../prime-ng/prime-ng.module';
+import { PrimeNgModule } from '../../shared/prime-ng/prime-ng.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 

@@ -1,7 +1,7 @@
 export interface Registro {
     dia: string;
     hora: string;
-    temperatura: string;
+    temperatura: number;
     precioMWH: string;
   }
   
