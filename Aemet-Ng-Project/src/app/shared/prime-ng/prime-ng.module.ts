@@ -19,6 +19,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { ChipModule } from 'primeng/chip';
 import { AnimateOnScrollModule } from 'primeng/animateonscroll';
+import { ButtonModule } from  'primeng/button'
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { AnimateOnScrollModule } from 'primeng/animateonscroll';
     PanelMenuModule,
     SplitterModule,
     AvatarModule,
-    AvatarGroupModule
+    AvatarGroupModule,
+    ButtonModule
   ],
   exports: [
     AnimateOnScrollModule,
@@ -63,7 +65,8 @@ import { AnimateOnScrollModule } from 'primeng/animateonscroll';
     TabViewModule,
     PanelMenuModule,
     SplitterModule,
-    ChipModule
+    ChipModule,
+    ButtonModule
   ]
 })
 export class PrimeNgModule { }

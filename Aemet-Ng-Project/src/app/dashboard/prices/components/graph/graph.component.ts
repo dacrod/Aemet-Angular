@@ -25,6 +25,7 @@ export class GraphComponent {
         this.actualPrice = price;
       } );
 
+    //Subscribing to obtainRedosData() for obtaining data of the service
     this.redOsService.obtainRedosData()
       .subscribe( pricesPerHour => {
         this.pricePerHour = pricesPerHour;

@@ -21,6 +21,7 @@ export class TemperaturesService {
       day = `0${day}`;
     }
 
+    //Calls weatherAPI  and returns 'arrayTemps' with these data
     return this.http.get<Weather>( this.urlStart + `${year}-${month}-${day}` + this.urlEnd )
       .pipe(
         map( res => {

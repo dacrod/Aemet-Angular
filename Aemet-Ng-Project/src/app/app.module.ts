@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { PrimeNgModule } from './shared/prime-ng/prime-ng.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { HeaderComponent } from './header/header.component';
+import { HeaderModule } from './header/header.module';
+
 
 
 @NgModule({
@@ -22,7 +25,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     BrowserAnimationsModule,
     FormsModule,
     PrimeNgModule,
-    DashboardModule
+    DashboardModule,
+    HeaderModule
   ],
   providers: [
     provideClientHydration()
