@@ -14,6 +14,7 @@ export class PriceService {
   public urlLuzDia: string = "https://api.preciodelaluz.org/v1/prices/all?zone=PCB";
   public urlActualPrice: string = "https://api.preciodelaluz.org/v1/prices/now?zone=PCB";
 
+  //This obtain the prices per hour of 'preciodelaluz' API
   obtainRedosData () {
     return this.httpClient.get<Luz>( this.urlLuzDia )
       .pipe(

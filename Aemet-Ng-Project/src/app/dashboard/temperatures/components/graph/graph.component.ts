@@ -18,6 +18,7 @@ export class GraphComponent {
   arrayPrices : number[] = [];
   arrayHours  : number[] = [];
 
+  //Parameters for the graphics
   options = {
     maintainAspectRatio: true,
     aspectRatio: 1.5
@@ -38,6 +39,7 @@ export class GraphComponent {
     this.getData();
   }
 
+  //This function is called on calendar's changes
   onDateChange(event: Date) {
     this.year = event.getFullYear().toString();
     this.month = (event.getMonth() + 1).toString();
@@ -46,6 +48,7 @@ export class GraphComponent {
     this.getData();
   }
 
+  //Obtains the temperatures data
   getData() {
     this.aemetService.obtainAemetData( this.year, this.month, this.day  )
       .subscribe( res=> {

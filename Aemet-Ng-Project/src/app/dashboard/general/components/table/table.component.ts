@@ -59,11 +59,13 @@ export class TableComponent {
       })
   }
 
+  //Function used when the paginator of the table is used
   onPageChange(event: any) {
     this.first = event.first;
     this.rows = event.rows;
   }
 
+  //When the calendar date change, this function is used
   onDateChange(event: Date) {
     this.year = event.getFullYear().toString();
     this.month = (event.getMonth() + 1).toString();
@@ -74,6 +76,7 @@ export class TableComponent {
       this.checked = false;
     }
 
+    //Subscribing to obtainAemetData (function of temperature's service)
     this.temperaturesService.obtainAemetData(this.year, this.month, this.day)
       .subscribe(res => {
         this.registros = [];
@@ -100,6 +103,7 @@ export class TableComponent {
 
   }
 
+  //Function used for the color of the price data
   priceRange(price: number) {
     let resultado: string;
     if( price < 70 ) {

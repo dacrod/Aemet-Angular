@@ -18,11 +18,14 @@ import { SplitterModule } from 'primeng/splitter';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { ChipModule } from 'primeng/chip';
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
+import { ButtonModule } from  'primeng/button'
 
 
 @NgModule({
   declarations: [],
   imports: [
+    AnimateOnScrollModule,
     ChipModule,
     CommonModule,
     TabMenuModule,
@@ -40,9 +43,11 @@ import { ChipModule } from 'primeng/chip';
     PanelMenuModule,
     SplitterModule,
     AvatarModule,
-    AvatarGroupModule
+    AvatarGroupModule,
+    ButtonModule
   ],
   exports: [
+    AnimateOnScrollModule,
     AvatarGroupModule,
     AvatarModule,
     TabMenuModule,
@@ -60,7 +65,8 @@ import { ChipModule } from 'primeng/chip';
     TabViewModule,
     PanelMenuModule,
     SplitterModule,
-    ChipModule
+    ChipModule,
+    ButtonModule
   ]
 })
 export class PrimeNgModule { }
